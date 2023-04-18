@@ -111,7 +111,7 @@ VALUES (5, 'Extra Credit', 10.0, 1);
 
 UPDATE Assignment
 SET percentage = 30.0
-WHERE category = 'Homework' AND course_id = 1;
+WHERE category = 'Assignments' AND course_id = 1;
 
 /* Add 2 points to the score of each student on an assignment (e.g., assignment_id = 3) */
 
