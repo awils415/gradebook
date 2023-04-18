@@ -45,9 +45,9 @@ VALUES (1, 'CSCI', 432, 'Database Systems', 'Spring', 2023);
 
 /* Insert values into Student table */
 INSERT INTO Student (student_id, first_name, last_name, course_id)
-VALUES (1, 'John', 'Doe', 1),
-       (2, 'Charles', 'Xavier', 1),
-       (3, 'Johnny', 'Appleseed', 1);
+VALUES (1, 'Jamie', 'Stevens', 1),
+       (2, 'Monae', 'Adams', 1),
+       (3, 'Alliston', 'Dunn', 1);
 
 /* Insert values into Assignment table */
 INSERT INTO Assignment (assignment_id, category, percentage, course_id)
