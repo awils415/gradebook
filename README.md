@@ -36,76 +36,76 @@ The system is implemented in SQL. Please read below to compile and execute the p
 - Connect to your DBMS using a SQL client (e.g., MySQL Workbench, pgAdmin).
 - Use the following commands to create their respective tables:
    - Course table:
-      CREATE TABLE Course (
-        course_id INT PRIMARY KEY,
-        department VARCHAR(255),
-        course_number INT,
-        course_name VARCHAR(255),
-        semester VARCHAR(255),
-        year INT
+      CREATE TABLE Course (<br />
+        course_id INT PRIMARY KEY,<br />
+        department VARCHAR(255),<br />
+        course_number INT,<br />
+        course_name VARCHAR(255),<br />
+        semester VARCHAR(255),<br />
+        year INT<br />
       );
       
-   - Student table:
-      CREATE TABLE Student (
-        student_id INT PRIMARY KEY,
-        first_name VARCHAR(255),
-        last_name VARCHAR(255),
-        course_id INT,
-        FOREIGN KEY (course_id) REFERENCES Course(course_id)
+   - Student table:<br />
+      CREATE TABLE Student (<br />
+        student_id INT PRIMARY KEY,<br />
+        first_name VARCHAR(255),<br />
+        last_name VARCHAR(255),<br />
+        course_id INT,<br />
+        FOREIGN KEY (course_id) REFERENCES Course(course_id)<br />
       );
    
-   - Assignment table:
-      CREATE TABLE Assignment (
-        assignment_id INT PRIMARY KEY,
-        category VARCHAR(255),
-        percentage DECIMAL(5,2),
-        course_id INT,
-        FOREIGN KEY (course_id) REFERENCES Course(course_id)
+   - Assignment table:<br />
+      CREATE TABLE Assignment (<br />
+        assignment_id INT PRIMARY KEY,<br />
+        category VARCHAR(255),<br />
+        percentage DECIMAL(5,2),<br />
+        course_id INT,<br />
+        FOREIGN KEY (course_id) REFERENCES Course(course_id)<br />
       );
    
-   - Grades table:
-      CREATE TABLE Grades (
-        grade_id INT PRIMARY KEY,
-        assignment_id INT,
-        student_id INT,
-        score DECIMAL(5,2),
-        FOREIGN KEY (assignment_id) REFERENCES 
-        Assignment(assignment_id),
-        FOREIGN KEY (student_id) REFERENCES Student(student_id)
+   - Grades table:<br />
+      CREATE TABLE Grades (<br />
+        grade_id INT PRIMARY KEY,<br />
+        assignment_id INT,<br />
+        student_id INT,<br />
+        score DECIMAL(5,2),<br />
+        FOREIGN KEY (assignment_id) REFERENCES <br />
+        Assignment(assignment_id),<br />
+        FOREIGN KEY (student_id) REFERENCES Student(student_id)<br />
       );
    
 ## Inserting Values
 - Use the following commands to insert values into the tables using the following examples:
-   - Insertions for Course table:
-       INSERT INTO Course (course_id, department, course_number, course_name, semester, year)
+   - Insertions for Course table:<br />
+       INSERT INTO Course (course_id, department, course_number, course_name, semester, year)<br />
        VALUES (1, 'CSCI', 432, 'Database Systems', 'Spring', 2023);
        
-   - Insertions for Student table:
-       INSERT INTO Student (student_id, first_name, last_name, course_id)
-       VALUES (1, 'Jamie', 'Stevens', 1),
-              (2, 'Monae', 'Adams', 1),
+   - Insertions for Student table:<br />
+       INSERT INTO Student (student_id, first_name, last_name, course_id)<br />
+       VALUES (1, 'Jamie', 'Stevens', 1),<br />
+              (2, 'Monae', 'Adams', 1),<br />
               (3, 'Alliston', 'Dunn', 1);
               
-   - Insertions for Assignment table:
-       INSERT INTO Assignment (assignment_id, category, percentage, course_id)
-       VALUES (1, 'Assignments', 15.0, 1),
-              (2, 'Midterm', 30.0, 1),
-              (3, 'Project', 15.0, 1),
-              (4, 'Final Exam', 40.0, 1);
+   - Insertions for Assignment table:<br />
+       INSERT INTO Assignment (assignment_id, category, percentage, course_id)<br />
+       VALUES (1, 'Assignments', 15.0, 1),<br />
+              (2, 'Midterm', 30.0, 1),<br />
+              (3, 'Project', 15.0, 1),<br />
+              (4, 'Final Exam', 40.0, 1);<br />
    
-   - Insertions for Grades table:
-       INSERT INTO Grades (grade_id, assignment_id, student_id, score)
-       VALUES (1, 1, 1, 6.5),
-              (2, 2, 1, 92.0),
-              (3, 3, 1, 75.0),
-              (4, 4, 1, 88.0),
-              (5, 1, 2, 9.0),
-              (6, 2, 2, 84.5),
-              (7, 3, 2, 82.0),
-              (8, 4, 2, 92.0),
-              (9, 1, 3, 7.0),
-              (10, 2, 3, 78.0),
-              (11, 3, 3, 90.0),
+   - Insertions for Grades table:<br />
+       INSERT INTO Grades (grade_id, assignment_id, student_id, score)<br />
+       VALUES (1, 1, 1, 6.5),<br />
+              (2, 2, 1, 92.0),<br />
+              (3, 3, 1, 75.0),<br />
+              (4, 4, 1, 88.0),<br />
+              (5, 1, 2, 9.0),<br />
+              (6, 2, 2, 84.5),<br />
+              (7, 3, 2, 82.0),<br />
+              (8, 4, 2, 92.0),<br />
+              (9, 1, 3, 7.0),<br />
+              (10, 2, 3, 78.0),<br />
+              (11, 3, 3, 90.0),<br />
               (12, 4, 3, 95.0);
    
    
